@@ -20,17 +20,7 @@ Install the latest Cookiecutter if you haven't installed it yet::
 pip install -U cookiecutter
 ```
 
-Generate an Empirical project:
+Generate an Symbulation project:
 ```bash
 cookiecutter https://github.com/anyaevostinar/SymbulationProjectTemplate.git
 ```
-
-`hooks/post_gen_project.sh` will run to initialize submodules.
-If you want your repo to automatically push to github, set up the remote repo first.
-
-Take it for a spin!
-```bash
-make test
-```
-
-Then add the repo to your [ReadTheDocs](https://readthedocs.io/) account + turn on the ReadTheDocs service hook.
