@@ -3,7 +3,7 @@
     "full_name": "Anya Vostinar",
     "email": "vostinar@carleton.edu",
     "github_username": "anyaevostinar",
-    "project_name": "SybmulationProject", 
+    "project_name": "SymbulationProject", 
     "_copy_without_render": [
       "*/.github",
       "Empirical/include/emp/datastructs/tuple_struct.hpp",
