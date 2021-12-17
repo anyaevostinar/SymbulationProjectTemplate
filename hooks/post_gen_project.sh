@@ -14,4 +14,5 @@ git commit -m "Initial commit"
 
 # Attempt to push local repo to remote repository on github
 git remote add origin git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.project_name }}.git
-git push origin master || echo 'speculative initial push failed, try setting up repo on github first.'
+git branch -M main
+git push origin main || echo 'speculative initial push failed, try setting up repo on github first.'
