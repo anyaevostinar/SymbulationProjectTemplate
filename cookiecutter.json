@@ -1,0 +1,19 @@
+{
+
+    "full_name": "Anya Vostinar",
+    "email": "vostinar@carleton.edu",
+    "github_username": "anyaevostinar",
+    "project_name": "SymbulationProject", 
+    "_copy_without_render": [
+      "*/.github",
+      "Empirical/include/emp/datastructs/tuple_struct.hpp",
+      "*/d3", 
+      "*.cpp"
+  ],
+   "version": "0.1.0",
+   "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
+  "summary": "A project for investigating symbiosis"
+  }
+
+    
+    
