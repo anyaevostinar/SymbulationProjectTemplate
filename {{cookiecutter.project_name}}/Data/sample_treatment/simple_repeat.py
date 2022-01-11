@@ -19,10 +19,6 @@ def silent_cmd(command):
     R script calls unitl all neccesary data is created.'''
     return subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).wait()
 
-print("Copying SymSettings.cfg and executable to current directory")
-cmd("cp ../../SymSettings.cfg .")
-cmd("cp ../../symbulation .")
-
 for a in seeds:
     for b in verts:
         for c in h_mut_rate:
