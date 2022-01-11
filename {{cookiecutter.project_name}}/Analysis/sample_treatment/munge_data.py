@@ -3,11 +3,9 @@ import gzip
 
 folder = ''
 
-#treatment_postfixes = ["VT0.3_MR0.1", "VT0.3_MR0.2", "VT0.3_MR0.3", "VT0.3_MR0.4", "VT0.3_MR0.5", "VT0.3_MR0.6", "VT0.3_MR0.7", "VT0.3_MR0.8", "VT0.3_MR0.9", "VT0.3_MR1.0"]
 treatment_postfixes = ["VT0.3_MR0.1", "VT0.3_MR0.5", "VT0.3_MR1.0"]
 partners = ["Host", "Sym"]
 reps = range(21,41)
-#reps = range(1001, 1021)
 final_update = 100
 header = "uid treatment rep update donate partner\n"
 
