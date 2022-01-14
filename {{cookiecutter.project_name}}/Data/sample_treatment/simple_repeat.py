@@ -1,11 +1,22 @@
 #a script to run several replicates of several treatments locally
 #You should create a directory for your result files and run this script from within that directory
-
-seeds = range(21, 41)
-verts = [0.3]
-h_mut_rate = [0.1, 0.5, 1.0]
+# usage: python3 simple_repeat.py <start_seed> <end_seed>
+# Assumes that symbulation executable and SymSettings.cfg already in the folder
 
 import subprocess
+import sys
+
+start_range = 21
+end_range = 26
+verts = [0.0, 1.0]
+
+if(len(sys.argv) > 1):
+    start_range = int(sys.argv[1])
+    end_range = int(sys.argv[2])
+
+seeds = range(start_range, end_range)
+
+print("Using seeds", start_range, "up to", end_range)
 
 def cmd(command):
     '''This wait causes all executions to run in sieries.                          
@@ -21,7 +32,6 @@ def silent_cmd(command):
 
 for a in seeds:
     for b in verts:
-        for c in h_mut_rate:
-            command_str = './symbulation -UPDATES 10001 -SYNERGY 3 -MUTATION_RATE 0.1 -SEED '+str(a)+ ' -VERTICAL_TRANSMISSION ' +str(b)+ ' -EFFICIENCY_MUT_RATE -1'+' -HORIZ_MUTATION_RATE '+ str(c) +' -FILE_NAME _Seed'+str(a)+'_VT'+str(b)+'_MR'+str(c) +' -GRID_X 100 -GRID_Y 100'
-            print(command_str)
-            cmd(command_str)
+        command_str = './symbulation -SEED '+str(a)+ ' -VERTICAL_TRANSMISSION ' +str(b)+ ' -FILE_NAME _VT'+str(b)
+        print(command_str)
+        cmd(command_str)
