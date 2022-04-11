@@ -6,7 +6,6 @@
 git init
 git add .
 git submodule add https://github.com/anyaevostinar/SymbulationEmp.git SymbulationEmp
-git submodule add https://github.com/devosoft/Empirical.git Empirical
 git submodule init
 git submodule update --recursive --init
 
