@@ -23,15 +23,23 @@ def silent_cmd(command):
 start_range = 10
 end_range = 21
 
+#collect optional command line arguments
 if(len(sys.argv) > 1):
+    #first argument is the starting range for seeds
     start_range = int(sys.argv[1])
     if(len(sys.argv) > 2):
+        #if the user provides a second argument, use it
+        #as the inclusive end of the seed range
         end_range = int(sys.argv[2]) + 1
     else:
+        #if the user does not provide a second argument,
+        #set the seed range as just the single seed 
+        #indicated by the first argument
         end_range = start_range + 1
 
 seeds = range(start_range, end_range)
 
+#Tell the user the inclusive range of seeds
 print("Using seeds", start_range, "through", end_range-1)
 
 for a in seeds:
