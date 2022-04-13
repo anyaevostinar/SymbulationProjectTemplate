@@ -21,7 +21,7 @@ def silent_cmd(command):
     return subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).wait()
 
 start_range = 10
-end_range = 21
+end_range = 20
 
 #collect optional command line arguments
 if(len(sys.argv) > 1):
