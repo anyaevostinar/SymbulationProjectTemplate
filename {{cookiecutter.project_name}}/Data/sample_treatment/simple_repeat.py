@@ -6,17 +6,7 @@
 import subprocess
 import sys
 
-start_range = 21
-end_range = 26
 verts = [0.0, 1.0]
-
-if(len(sys.argv) > 1):
-    start_range = int(sys.argv[1])
-    end_range = int(sys.argv[2])
-
-seeds = range(start_range, end_range)
-
-print("Using seeds", start_range, "up to", end_range)
 
 def cmd(command):
     '''This wait causes all executions to run in sieries.                          
@@ -30,8 +20,32 @@ def silent_cmd(command):
     R script calls unitl all neccesary data is created.'''
     return subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).wait()
 
+start_range = 10
+end_range = 20
+
+#collect optional command line arguments
+if(len(sys.argv) > 1):
+    #first argument is the starting range for seeds
+    start_range = int(sys.argv[1])
+    if(len(sys.argv) > 2):
+        #if the user provides a second argument, use it
+        #as the inclusive end of the seed range
+        end_range = int(sys.argv[2]) + 1
+    else:
+        #if the user does not provide a second argument,
+        #set the seed range as just the single seed 
+        #indicated by the first argument
+        end_range = start_range + 1
+
+seeds = range(start_range, end_range)
+
+#Tell the user the inclusive range of seeds
+print("Using seeds", start_range, "through", end_range-1)
+
 for a in seeds:
     for b in verts:
         command_str = './symbulation -SEED '+str(a)+ ' -VERTICAL_TRANSMISSION ' +str(b)+ ' -FILE_NAME _VT'+str(b)
+        settings_filename = "Output_VT"+str(b)+"_SEED"+str(a)+".data"
+
         print(command_str)
-        cmd(command_str)
+        cmd(command_str+" > "+settings_filename)
