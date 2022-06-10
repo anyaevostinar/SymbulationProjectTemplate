@@ -44,7 +44,7 @@ print("Using seeds", start_range, "through", end_range-1)
 
 for a in seeds:
     for b in verts:
-        command_str = './symbulation -SEED '+str(a)+ ' -VERTICAL_TRANSMISSION ' +str(b)+ ' -FILE_NAME _VT'+str(b)
+        command_str = './symbulation_default -SEED '+str(a)+ ' -VERTICAL_TRANSMISSION ' +str(b)+ ' -FILE_NAME _VT'+str(b)
         settings_filename = "Output_VT"+str(b)+"_SEED"+str(a)+".data"
 
         print(command_str)
