@@ -20,8 +20,8 @@ def silent_cmd(command):
     R script calls unitl all neccesary data is created.'''
     return subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).wait()
 
-start_range = 10
-end_range = 20
+start_range = 21
+end_range = 25
 
 #collect optional command line arguments
 if(len(sys.argv) > 1):
